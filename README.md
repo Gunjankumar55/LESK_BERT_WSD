@@ -2,7 +2,7 @@
 
 A modern web application for disambiguating ambiguous words using the Enhanced Lesk Algorithm with BERT semantic similarity and machine learning techniques.
 
-![Word Sense Disambiguation Tool](https://i.imgur.com/6CfZHHO.png)
+
 
 ## 🌟 Features
 
