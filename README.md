@@ -12,8 +12,6 @@ An advanced Word Sense Disambiguation (WSD) system that combines the Lesk algori
 
 Try the live demo: [https://gkc55-nlp-wsd.hf.space/](https://gkc55-nlp-wsd.hf.space/)
 
-![WSD Tool Screenshot](https://i.imgur.com/YOUR_SCREENSHOT_ID.png)
-
 ## 🎯 Features
 
 - **Enhanced Lesk Algorithm**: Improved version of the traditional Lesk algorithm
@@ -69,9 +67,7 @@ python app.py
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👨‍💻 Author
 
@@ -79,9 +75,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - GitHub: [@Gunjankumar55](https://github.com/Gunjankumar55)
 - LinkedIn: [Gunjankumar Choudhari](https://linkedin.com/in/gunjankumarchoudhari)
 - Portfolio: [Gunjan Portfolio](https://gunjankumar55.github.io/Gunjan_Portfolio/)
-
-## 🙏 Acknowledgments
-
-- NLTK team for the excellent NLP tools
-- Hugging Face for BERT implementation
-- Flask team for the web framework
