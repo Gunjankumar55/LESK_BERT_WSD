@@ -1,4 +1,4 @@
-# LESK BERT WSD - Advanced Word Sense Disambiguation
+# SenseResolver - Modern WSD with BERT & Lesk
 
 [![Python](https://img.shields.io/badge/Python-3.9-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.0.1-green.svg)](https://flask.palletsprojects.com/)
