@@ -1,153 +1,87 @@
-# Word Sense Disambiguation Tool
+# LESK BERT WSD - Advanced Word Sense Disambiguation
 
-A modern web application for disambiguating ambiguous words using the Enhanced Lesk Algorithm with BERT semantic similarity and machine learning techniques.
+[![Python](https://img.shields.io/badge/Python-3.9-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.0.1-green.svg)](https://flask.palletsprojects.com/)
+[![NLTK](https://img.shields.io/badge/NLTK-3.8.1-orange.svg)](https://www.nltk.org/)
+[![BERT](https://img.shields.io/badge/BERT-4.30.2-yellow.svg)](https://huggingface.co/transformers/)
+[![Demo](https://img.shields.io/badge/Demo-Live-success.svg)](https://gkc55-nlp-wsd.hf.space/)
 
+An advanced Word Sense Disambiguation (WSD) system that combines the Lesk algorithm with BERT embeddings for improved accuracy in determining word meanings from context.
 
+## 🚀 Live Demo
 
-## 🌟 Features
+Try the live demo: [https://gkc55-nlp-wsd.hf.space/](https://gkc55-nlp-wsd.hf.space/)
 
-- **Enhanced Lesk Algorithm**: Utilizes an improved version of the classic Lesk algorithm
-- **BERT Semantic Similarity**: Optional integration with BERT for better understanding of context
-- **Context Analysis**: Analyzes surrounding words with proximity weighting
-- **Smart Caching**: Uses Flask-Caching to improve performance
-- **User Feedback**: Learns from user input to improve future disambiguations
-- **Dark Mode**: Supports light and dark themes with automatic system preference detection
-- **API Access**: RESTful API for programmatic access to the disambiguation engine
-- **Mobile Responsive**: Works on devices of all sizes
+![WSD Tool Screenshot](https://i.imgur.com/YOUR_SCREENSHOT_ID.png)
 
-## 📋 Table of Contents
+## 🎯 Features
 
-- [Demo](#-demo)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [API Documentation](#-api-documentation)
-- [How It Works](#-how-it-works)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
+- **Enhanced Lesk Algorithm**: Improved version of the traditional Lesk algorithm
+- **BERT Integration**: Uses BERT embeddings for better context understanding
+- **Interactive Web Interface**: User-friendly Flask-based web application
+- **Real-time Feedback System**: Learn from user corrections to improve accuracy
+- **Context-Aware Processing**: Considers surrounding words with proximity weighting
+- **Multiple Sense Support**: Handles words with multiple meanings effectively
 
-## 🚀 Demo
+## 🧠 How It Works
 
-Try the live demo: [Word Sense Disambiguation Tool](https://wsd-tool.herokuapp.com/) *(Replace with your actual deployment URL)*
+1. **Input Processing**: Analyzes text to identify ambiguous words
+2. **Context Extraction**: Extracts and weights context words based on proximity
+3. **Sense Comparison**: Compares each possible word sense with the context
+4. **BERT Similarity**: Uses BERT embeddings to calculate semantic similarity
+5. **Sense Selection**: Selects the most appropriate sense based on combined scores
+6. **User Feedback**: Learns from user corrections to improve future results
 
-## 🔧 Installation
+## 🛠️ Technical Stack
 
-### Prerequisites
+- **Backend**: Flask, Python 3.9
+- **NLP**: NLTK, BERT Transformers
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap 5
+- **Deployment**: Docker, Hugging Face Spaces
 
-- Python 3.8 or higher
+## 📋 Prerequisites
+
+- Python 3.9+
 - pip (Python package manager)
+- Docker (for containerization)
 
-### Setup
+## 🚀 Quick Start
 
 1. Clone the repository:
-
 ```bash
-git clone https://github.com/yourusername/wsd-tool.git
-cd wsd-tool
+git clone https://github.com/Gunjankumar55/LESK_BERT_WSD.git
+cd LESK_BERT_WSD
 ```
 
-2. Create a virtual environment:
-
-```bash
-python -m venv venv
-```
-
-3. Activate the virtual environment:
-
-**On Windows:**
-```bash
-venv\Scripts\activate
-```
-
-**On macOS/Linux:**
-```bash
-source venv/bin/activate
-```
-
-4. Install dependencies:
-
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Download NLTK resources:
-
-```bash
-python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt'); nltk.download('averaged_perceptron_tagger'); nltk.download('stopwords')"
-```
-
-## 🎮 Usage
-
-1. Start the Flask application:
-
+3. Run the application:
 ```bash
 python app.py
 ```
 
-2. Open your browser and navigate to:
+4. Access the web interface at `http://localhost:5000`
 
-```
-http://localhost:5000
-```
+## 🤝 Contributing
 
-3. Enter a sentence with an ambiguous word and click "Disambiguate"
-   - Optionally specify the target word
-   - Use the provided examples to get started
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📚 API Documentation
+## 📝 License
 
-The application provides a RESTful API for programmatic access:
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Disambiguate a word
+## 👨‍💻 Author
 
-**Endpoint:** `/api/disambiguate`
+**Gunjankumar Choudhari**
+- GitHub: [@Gunjankumar55](https://github.com/Gunjankumar55)
+- LinkedIn: [Gunjankumar Choudhari](https://linkedin.com/in/gunjankumarchoudhari)
+- Portfolio: [Gunjan Portfolio](https://gunjankumar55.github.io/Gunjan_Portfolio/)
 
-**Method:** POST
+## 🙏 Acknowledgments
 
-**Request Format:**
-```json
-{
-  "text": "I saw a bat flying in the dark.",
-  "target_word": "bat"  // Optional, if omitted the system will try to find an ambiguous word
-}
-```
-
-**Response Format:**
-```json
-{
-  "word": "bat",
-  "sentence": "I saw a bat flying in the dark.",
-  "best_sense": {
-    "name": "bat.n.01",
-    "definition": "nocturnal mouselike mammal with forelimbs modified to form membranous wings",
-    "examples": ["the bat moved silently through the night air"],
-    "lexname": "noun.animal"
-  },
-  "context_words": ["see", "fly", "dark"],
-  "alternative_senses": [
-    {
-      "name": "bat.n.02",
-      "definition": "an implement used for hitting the ball in various games",
-      "examples": ["a baseball bat"],
-      "lexname": "noun.artifact"
-    },
-    // ...more senses
-  ]
-}
-```
-
-## 🧠 How It Works
-
-The Word Sense Disambiguation (WSD) tool uses several approaches to determine the most likely meaning of an ambiguous word:
-
-1. **Context Analysis**: The system analyzes words surrounding the target word
-2. **Enhanced Lesk Algorithm**: Compares context with definition and examples from WordNet
-3. **BERT Integration**: Uses BERT embeddings to compare semantic similarity
-4. **Rule-Based Components**: Hand-crafted rules for common ambiguous words
-5. **Collocation Detection**: Recognizes common phrases that indicate specific meanings
-6. **Feedback Learning**: Improves based on user feedback
-
-For more details, visit the "About Lesk Algorithm" page in the application.
-
-
-Made with ❤️ by [Gunjankumar Choudhari]
+- NLTK team for the excellent NLP tools
+- Hugging Face for BERT implementation
+- Flask team for the web framework
